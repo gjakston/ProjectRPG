@@ -1,6 +1,9 @@
+import java.io.File;
+import java.io.RandomAccessFile;
+import java.io.IOException;
 public class RandomEvent {
     public static byte[][] grid = new byte[50][50]; //false not travelled, true travelled
-    public static String[] eventNames = new String[999];
+    public static String[] idList = new String[6999];
     public static String[][] gridEventPast = new String[50][50];
     public static boolean arrayPopulated = false;
     public RandomEvent() {}
@@ -9,7 +12,7 @@ public class RandomEvent {
             grid[x][y] = 0; 
             gridEventPast[x][y] = "The start of your adventure.";
             arrayPopulator();
-            //
+            accessIDs();
         }
         if (grid[x][y] == 1) {
             // Random Event
@@ -33,7 +36,36 @@ public class RandomEvent {
         }
         arrayPopulated = true;
     }
-
+    public static void accessIDs() {
+        try {
+            File file = new File("idList.gand");
+            RandomAccessFile idList = new RandomAccessFile(file, "r");
+            /*
+            while (idList.readLine()!= null) {
+                System.out.println(idList.readLine());
+            }
+            */
+            String storage = "";
+            char numberSign;
+            for (int j = 0; j < 30; j++) {
+                storage = idList.readLine();
+                numberSign = storage.charAt(0);
+                if (numberSign == '#') {
+                    System.out.println("Line ignored");
+                } else {
+                    // split into 2 number and word
+                    // use number to store in array idList the word
+                    
+                }
+                
+            } 
+            idList.close();
+        } catch (IOException e) {
+            System.out.println("IOException: ");
+            e.printStackTrace();
+        }
+        
+    }
 
 
 
