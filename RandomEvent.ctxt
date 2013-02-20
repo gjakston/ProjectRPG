@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=RandomEvent()
+comment1.params=x\ y
+comment1.target=void\ newRandomEvent(int,\ int)
+comment2.params=
+comment2.target=void\ arrayPopulator()
+numComments=3
