@@ -6,11 +6,21 @@ import java.util.*;
  * 10% Towns 1% large, 3% medium, 6% small 
  * 70% Monster
  * 20% NPCs - 80% aggressive
+ * 
+ * byte[][] grid Values:
+ *      01 = Unexplored
+ *      05 = 
+ *      06 = 
+ *      07 = 
+ *      08 = Wild Life  
+ *      09 = Unslain Monster
+ *      10 = Town
+ * 
+ * 
  */
 public class RandomEvent {
-    public static byte[][] grid = new byte[50][50]; //false not travelled, true travelled
-    public static String[] idList = new String[6999];
-    public static String[][] gridEventPast = new String[50][50];
+    public static byte[][] grid = new byte[50][50];
+    public static String[] idList = new String[6999];   
     public static boolean arrayPopulated = false;
     public RandomEvent() {}
     public static void newRandomEvent(int x, int y) {
@@ -21,7 +31,6 @@ public class RandomEvent {
         generationValue = generator.nextInt(1000);
         if (arrayPopulated != true) {
             grid[x][y] = 0; 
-            gridEventPast[x][y] = "The start of your adventure.";
             arrayPopulator();
             accessIDs();
         }
@@ -31,7 +40,7 @@ public class RandomEvent {
                 generationValue = generator.nextInt(1000);
                 if (generationValue > 900) {
                     //Generate Town
-                    size = generator.nextInt(3);
+                    size = generator.nextInt(3) + 1;
                     Town town = new Town(name, size, x, y);
                     
                     
@@ -51,8 +60,10 @@ public class RandomEvent {
             } else { // No random Event
                 //
             }
-        } else if (grid[x][y] == 127) {
-            System.out.println(gridEventPast[x][y]);
+        }
+        if (grid[x][y] == 10) { // 
+            //
+            
         }
          // Tire treads //
         //             //
