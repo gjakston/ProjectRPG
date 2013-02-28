@@ -1,8 +1,6 @@
 # Example of a comment
 #   Format for TownData.gand
 
-82 78 Georgeville 3	 
-#X coord., Y coord., Town Name, Town Size
+82 78 Georgeville 3 2389	 
+#X coord., Y coord., Town Name, Town Size, Town Relationship
 #                                 1 - 3
-
-
