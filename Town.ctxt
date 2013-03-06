@@ -5,5 +5,4 @@ comment1.params=name\ size\ x\ y
 comment1.target=Town(java.lang.String,\ int,\ int,\ int)
 comment2.params=
 comment2.target=void\ WriteToFile()
-comment2.text=\r\n\ uwgbw0opiwqegwsg\r\n
 numComments=3

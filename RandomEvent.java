@@ -9,10 +9,13 @@ import java.util.*;
  * 
  * byte[][] grid Values:
  *      01 = Unexplored
+ *      02 = 
+ *      03 = 
+ *      04 = 
  *      05 = 
  *      06 = 
- *      07 = 
- *      08 = Wild Life  
+ *      07 = Wild Life
+ *      08 = Slain Monster  
  *      09 = Unslain Monster
  *      10 = Town
  * 

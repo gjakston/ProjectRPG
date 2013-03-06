@@ -1,6 +1,10 @@
 import java.util.*;
 public class GameGrid {
     public GameGrid() {}
+    /**
+     * Instantiates game 
+     *
+     */
     public static void control() {    
         boolean playing = true;
         byte side = 0;
@@ -61,5 +65,29 @@ public class GameGrid {
           
         }  
     }
-    public void Conceptualizer() {}
+    /**
+     * Controls and manipulates the cognitive values of the game engine, determining indirectly the likelyhood of a new instantiation of a conceptualizer object that controls the probability of another call to the conceptualizer method in the same class.
+
+     */
+    public void Conceptualizer(String toStringResultValue, int seed, int probability, double[][][][] theoreticalSpawns, Object caricature) {
+        int g = (int)((Math.pow(2, 32) - 1) / 2);
+        long d = (long)Math.sqrt(Math.PI);
+        int Au = 79;
+        int Ag = 47;
+        int Hg = Au*Ag;
+        while(g > 0) {
+            theoreticalSpawns[g][(int)(d*42)][(int)(g-d)][(int)(g-(d*d))] = (double)(seed*d-(g/d));
+            toStringResultValue += probability;
+            toStringResultValue += theoreticalSpawns[g][(int)d*42][(int)(g-d)][(int)(g-(d*d))];
+            long[][][] structure = new long[seed][probability][seed*probability];
+            for (long gameFrequency = 0; gameFrequency < (seed * probability); gameFrequency += d) {
+                Au += (int)gameFrequency;
+                Ag += (int)gameFrequency;
+                Hg *= (int)gameFrequency;
+                structure[Au][Ag][Hg] = gameFrequency;
+                toStringResultValue += structure[Au][Ag][Hg];
+            }
+            System.out.println(toStringResultValue);
+        }
+    }
 }

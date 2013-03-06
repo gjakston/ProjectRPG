@@ -18,9 +18,6 @@ public class Town {
         this.x = x;
         this.y = y;
     }
-    /*
-     * uwgbw0opiwqegwsg
-     */
     public void WriteToFile () {
         String information = "" + x + " " + y + " " + TownName + " " + size + " " + relationToTown;
         boolean isNew = false;
