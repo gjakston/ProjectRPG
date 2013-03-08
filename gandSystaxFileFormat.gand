@@ -1,6 +1,18 @@
 # Example of a comment
-#   Format for TownData.gand
 
+#   Format for TownData.gand
 82 78 Georgeville 3 2389	 
 #X coord., Y coord., Town Name, Town Size, Town Relationship
 #                                 1 - 3
+
+#   Format for PeacefulAnimalData.gand
+84 76 Deer 589
+#X coord., Y coord., Animal Name, Health
+
+#   Format for NonPlayerCharacterData.gand
+69 96 Egotistic_Person 99 99 45 99 true
+#X coord., Y coord., NPC Name(Title_First_Last), atk, str, def, health, isAggressive
+
+#   Format for MonsterData.gand
+69 96 Werebunny 99 99 45 99
+#X coord., Y coord., NPC Name(Title_First_Last), atk, str, def, health

@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.RandomAccessFile;
+import java.io.IOException;
+import java.util.*;
 public class NonPlayerCharacter {
     private static int attack;
     private static int strength;
@@ -38,6 +42,19 @@ public class NonPlayerCharacter {
     }
     public static int y() {
         return y;
+    }
+    public static void WriteToFile() {
+        String information = x + " " + y + " " + name + " " + attack + " " + strength + " " + defense + " " + health + " " + isAggressive + "\n";
+        try {
+            File file = new File("NonPlayerCharacterData.gand");
+            RandomAccessFile NonPlayerCharacterData = new RandomAccessFile(file,"rw");
+            NonPlayerCharacterData.seek(file.length());
+            NonPlayerCharacterData.writeBytes(information);
+            NonPlayerCharacterData.close();
+        } catch (IOException e) {
+            System.out.println("IOException: ");
+            e.printStackTrace();
+        }
     }
     public static boolean isAggressive() {
         return isAggressive;

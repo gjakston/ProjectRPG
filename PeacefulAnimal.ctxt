@@ -1,8 +1,8 @@
 #BlueJ class context
 comment0.params=
-comment0.target=PeacefulAnimals()
+comment0.target=PeacefulAnimal()
 comment1.params=name\ health\ x\ y
-comment1.target=PeacefulAnimals(java.lang.String,\ int,\ int,\ int)
+comment1.target=PeacefulAnimal(java.lang.String,\ int,\ int,\ int)
 comment2.params=
 comment2.target=java.lang.String\ PeacefulAnimalName()
 comment3.params=
@@ -11,4 +11,6 @@ comment4.params=
 comment4.target=int\ x()
 comment5.params=
 comment5.target=int\ y()
-numComments=6
+comment6.params=
+comment6.target=void\ WriteToFile()
+numComments=7

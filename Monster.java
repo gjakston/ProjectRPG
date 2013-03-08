@@ -1,3 +1,7 @@
+import java.io.File;
+import java.io.RandomAccessFile;
+import java.io.IOException;
+import java.util.*;
 public class Monster {
     private static int attack;
     private static int strength;
@@ -5,7 +9,6 @@ public class Monster {
     private static int health;
     private static int x;
     private static int y;
-    private static boolean isAggressive;
     private static String name;
     public Monster() {}
     public Monster(String name, int attack, int strength, int defense, int health,int x, int y) {
@@ -37,5 +40,18 @@ public class Monster {
     }
     public static int y() {
         return y;
+    }
+    public static void WriteToFile() {
+        String information = x + " " + y + " " + name + " " + attack + " " + strength + " " + defense + " " + health + "\n";
+        try {
+            File file = new File("MonsterData.gand");
+            RandomAccessFile MonsterData = new RandomAccessFile(file,"rw");
+            MonsterData.seek(file.length());
+            MonsterData.writeBytes(information);
+            MonsterData.close();
+        } catch (IOException e) {
+            System.out.println("IOException: ");
+            e.printStackTrace();
+        }
     }
 }
