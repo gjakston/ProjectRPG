@@ -1,2 +1,14 @@
 #BlueJ class context
-numComments=0
+comment0.params=
+comment0.target=ResetDataFiles()
+comment1.params=
+comment1.target=void\ ResetFileValuesNPC()
+comment2.params=
+comment2.target=void\ ResetFileValuesTown()
+comment3.params=
+comment3.target=void\ ResetFileValuesPeacefulAnimal()
+comment4.params=
+comment4.target=void\ ResetFileValuesMonster()
+comment5.params=
+comment5.target=void\ ResetFileValuesAll()
+numComments=6

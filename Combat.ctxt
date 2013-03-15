@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Combat()
+comment1.params=player\ monster
+comment1.target=void\ Fight(java.lang.Object,\ java.lang.Object)
+numComments=2

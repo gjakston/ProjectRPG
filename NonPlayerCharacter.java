@@ -12,7 +12,7 @@ public class NonPlayerCharacter {
     private static boolean isAggressive;
     private static String name;
     public NonPlayerCharacter() {}
-    public NonPlayerCharacter(String name, boolean isAggressive, int attack, int strength, int defense,int x, int y) {
+    public NonPlayerCharacter(String name, boolean isAggressive, int attack, int strength, int defense, int health, int x, int y) {
         this.attack = attack; 
         this.strength = strength;
         this.defense = defense;
@@ -23,7 +23,16 @@ public class NonPlayerCharacter {
         this.isAggressive = isAggressive;
     }
     public static String NPC_Name() {
-        return name;
+        String npcName[] = name.split("_");
+        String PrintedName = "";
+        for (int j = 0; j < npcName.length; j++) {
+            if (j + 1 != npcName.length) {
+                PrintedName += npcName[j] + " ";
+            } else {
+                PrintedName += npcName[j];
+            }
+        }
+        return PrintedName;
     }
     public static int attack() {
         return attack;

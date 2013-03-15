@@ -3,6 +3,8 @@ public class NewGame {
     public NewGame() {}
     public static void run() {
         Scanner input = new Scanner(System.in);
+        ResetDataFiles resetGame = new ResetDataFiles();
+        resetGame.ResetFileValuesAll();
         GameGrid gridOfGame = new GameGrid();
         GameGrid.control();
     }

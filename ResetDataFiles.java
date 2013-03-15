@@ -1,47 +1,53 @@
 import java.io.File;
-import java.io.RandomAccessFile;
 import java.io.IOException;
 import java.util.*;
+import java.io.*;
 public class ResetDataFiles {
     public ResetDataFiles() {}
-    public void ResetFileValues() {
-        File monsterFile = new File("MonsterData.gand");
-        RandomAccessFile MonsterData = new RandomAccessFile(file,"rw");
-        
-        
-        
-        
-        File npcFile = new File("NonPlayerCharacterData.gand");
-        RandomAccessFile NonPlayerCharacterData = new RandomAccessFile(file,"rw");
-        
-        
-        
-        
-        File peacefulAnimalFile = new File("PeacefulAnimalData.gand");
-        RandomAccessFile PeacefulAnimalData = new RandomAccessFile(file,"rw");
-        
-        
-        
-        
-        File townFile = new File("TownData.gand");
-        RandomAccessFile TownData = new RandomAccessFile(file,"rw");
-        
-        
-        
-        townFile.close();
-        
+    public void ResetFileValuesNPC() {
+        try {
+            PrintWriter writer = new PrintWriter("NonPlayerCharacterData.gand");
+            writer.print("");
+            writer.close();
+        } catch (Exception e) {
+            System.out.println("IOException: ");
+            e.printStackTrace();
+        }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public void ResetFileValuesTown() {
+        try {
+            PrintWriter writer = new PrintWriter("TownData.gand");
+            writer.print("");
+            writer.close();
+        } catch (Exception e) {
+            System.out.println("IOException: ");
+            e.printStackTrace();
+        }
+    }
+    public void ResetFileValuesPeacefulAnimal() {
+        try {
+            PrintWriter writer = new PrintWriter("PeacefulAnimalData.gand");
+            writer.print("");
+            writer.close();
+        } catch (Exception e) {
+            System.out.println("IOException: ");
+            e.printStackTrace();
+        }
+    }
+    public void ResetFileValuesMonster() {
+        try {
+            PrintWriter writer = new PrintWriter("MonsterData.gand");
+            writer.print("");
+            writer.close();
+        } catch (Exception e) {
+            System.out.println("IOException: ");
+            e.printStackTrace();
+        }
+    }
+    public void ResetFileValuesAll() {
+        ResetFileValuesNPC();
+        ResetFileValuesTown();
+        ResetFileValuesPeacefulAnimal();   
+        ResetFileValuesMonster();
+    }
 }

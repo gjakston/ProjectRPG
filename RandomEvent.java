@@ -25,10 +25,11 @@ public class RandomEvent {
     public static byte[][] grid = new byte[50][50];
     public static String[] idList = new String[6999];   
     public static boolean arrayPopulated = false;
+    public static int seed = 0;
     public RandomEvent() {}
     public static void newRandomEvent(int x, int y) {
         Random generator = new Random(778578458);
-        int attack, strength, defense, size, generationValue;
+        int attack, strength, defense, size, health, generationValue, rarity;
         boolean isAggressive = false;
         String name = "";
         generationValue = generator.nextInt(1000);
@@ -37,27 +38,31 @@ public class RandomEvent {
             arrayPopulator();
             accessIDs();
         }
-        if (grid[x][y] == 1) {
-            // Random Event
+        if (grid[x][y] == 1) { // Random Event
             if (generationValue > 300) { //Do Random Event
                 generationValue = generator.nextInt(1000);
                 if (generationValue > 900) {
                     //Generate Town
                     size = generator.nextInt(3) + 1;
                     Town town = new Town(name, size, x, y);
-                    
-                    
                 } else if (generationValue > 700) {
                     //Generate NPC
                     attack = generator.nextInt(1000);
                     strength = generator.nextInt(1000);
                     defense = generator.nextInt(1000);
+                    health = 100 + generator.nextInt(1000);
                     if (generationValue > 740) {
                         isAggressive = true;
                     }
-                    NonPlayerCharacter npc = new NonPlayerCharacter(name,isAggressive, attack, strength, defense, x, y);
+                    NonPlayerCharacter npc = new NonPlayerCharacter(name,isAggressive, attack, strength, defense, health, x, y);
                 } else {
                     //Generate Monster
+                    rarity = generator.nextInt(900);
+                    attack = generator.nextInt(1000);
+                    strength = generator.nextInt(1000);
+                    defense = generator.nextInt(1000);
+                    health = 100 + generator.nextInt(1000); 
+                    Monster monster = new Monster(name, attack, strength, defense, health, x, y);
                     
                 }
             } else { // No random Event
