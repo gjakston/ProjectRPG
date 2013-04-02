@@ -1,4 +1,4 @@
- import java.io.File;
+import java.io.File;
 import java.io.RandomAccessFile;
 import java.io.IOException;
 import java.util.*;
@@ -25,7 +25,6 @@ public class RandomEvent {
     public static byte[][] grid = new byte[50][50];
     public static String[] idList = new String[6999];   
     public static boolean arrayPopulated = false;
-    public static int seed = 0; 
     public RandomEvent() {}
     /** Creates the event encountered on the position of int x and int y*/
     public static void newRandomEvent(int x, int y) {
@@ -44,27 +43,14 @@ public class RandomEvent {
                 generationValue = generator.nextInt(1000);
                 if (generationValue > 900) {
                     //Generate Town
-                    size = generator.nextInt(3) + 1;
-                    Town town = new Town(name, size, x, y);
+                    generateTown(generationValue, x, y);
                 } else if (generationValue > 700) {
                     //Generate NPC
-                    attack = generator.nextInt(1000);
-                    strength = generator.nextInt(1000);
-                    defense = generator.nextInt(1000);
-                    health = 100 + generator.nextInt(1000);
-                    if (generationValue > 740) {
-                        isAggressive = true;
-                    }
-                    NonPlayerCharacter npc = new NonPlayerCharacter(name,isAggressive, attack, strength, defense, health, x, y);
+                    generateNonPlayerCharacter(generationValue, x, y); 
                 } else {
                     //Generate Monster
-                    rarity = generator.nextInt(900);
-                    attack = generator.nextInt(1000);
-                    strength = generator.nextInt(1000);
-                    defense = generator.nextInt(1000);
-                    health = 100 + generator.nextInt(1000); 
-                    Monster monster = new Monster(name, attack, strength, defense, health, x, y);
-                    
+                    generateMonster(generationValue, x, y);
+                    generatePeacefulAnimal(generationValue, x, y);
                 }
             } else { // No random Event
                 //
@@ -77,12 +63,13 @@ public class RandomEvent {
          // Tire treads //
         //             //
     }
-    /** Generates and creates values used to create a monster object, uses rarity in generation */
-    public static void generateMonsterValues() {
+    /** Generates a Monster, uses rarity in generation */
+    public static Object generateMonster(int seed, int x, int y) {
         Random generator = new Random(seed);
         int attack, strength, defense, health, rarity, incomplete = 0;
         String name;
         rarity = rarityValue(generator.nextInt(200000));
+        //Checks to if there is a string value at rarity
         if (idList[rarity] != "") {
             name = idList[rarity];
         } else {
@@ -96,6 +83,21 @@ public class RandomEvent {
             }            
             name = idList[rarity];
         }
+        //randomizes values monster stats
+        if ((seed + 1) % 2 == 0) {
+            attack = 1 + rarity + generator.nextInt(((int)(rarity    / 100)));
+            strength = 1 + rarity + generator.nextInt(((int)(rarity / 100)));
+            defense = 1 + rarity + generator.nextInt(((int)(rarity / 100)));
+            health = 1 + rarity + generator.nextInt(((int)(rarity / 100)));
+            //                                       It's a road /
+        } else {
+            attack = 1 + rarity - generator.nextInt(((int)(rarity    / 100)));
+            strength = 1 + rarity - generator.nextInt(((int)(rarity / 100)));
+            defense = 1 + rarity - generator.nextInt(((int)(rarity / 100)));
+            health = 1 + rarity - generator.nextInt(((int)(rarity / 100)));
+        }
+        Monster monster = new Monster(name, attack, strength, defense, health, x, y);
+        return monster;
     }
     /** Generates new rarity value if current one is invalid in the idList array */
     public static int newRarityListValue(int rarity) {
@@ -129,7 +131,8 @@ public class RandomEvent {
             return (generator.nextInt(200));         // 62.5%
         }
     }
-    public static void generateNonPlayerCharacterValues() {
+    /**Generates a NonPlayerCharacter */
+    public static void generateNonPlayerCharacter(int seed, int x, int y) {
         Random generator = new Random(seed);
         int attack, strength, defense, health, nameChoice;
         boolean isAggressive;
@@ -145,14 +148,16 @@ public class RandomEvent {
             name = idList[5500 + generator.nextInt(100)] + "_" + idList[5600 + generator.nextInt(100)] + "_" + idList[6000 + generator.nextInt(1000)];
         }
     }
-    public static void generatePeacefulAnimalValues() {
+    /** Generates a PeacefulAnimal */
+    public static void generatePeacefulAnimal(int seed, int x, int y) {
         Random generator = new Random(seed);       
         int health;
         String name = "";
         name = idList[1000 + generator.nextInt(1000)];
         health = 15 + generator.nextInt(50);
     }
-    public static void generateTownValues() {
+    /** Generates a Town */
+    public static void generateTown(int seed, int x, int y) {
         Random generator = new Random(seed);
         int size;
         String name;
@@ -172,15 +177,24 @@ public class RandomEvent {
             RandomAccessFile idList = new RandomAccessFile(file,"r");
             String storage = "";
             char numberSign;
-            for (int j = 0; j < 30; j++) {
+            int valueAtidList;
+            for (int j = 0; j < 7028; j++) {
                 storage = idList.readLine();
                 numberSign = storage.charAt(0);
-                if (numberSign == '#') {
-                    System.out.println("Line ignored");
-                } else {
-                    // split into 2 number and word
-                    // use number to store in array idList the word
-                    
+                if (numberSign == '#') {} else {
+                    String[] splitValues = storage.split(" ");
+                    /* Testing
+                    System.out.println(storage);
+                    for (int h = 0; h < splitValues.length; h++) {
+                        System.out.println(splitValues[h]);
+                    }
+                    */
+                    valueAtidList = Integer.parseInt(splitValues[0]);
+                    if (splitValues.length == 2) {
+                        idList[valueAtidList] = SplitValues[1];
+                    } else {
+                        idList[valueAtidList] = "";
+                    }
                 }
             } 
             idList.close();
