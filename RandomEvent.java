@@ -3,8 +3,9 @@ import java.io.RandomAccessFile;
 import java.io.IOException;
 import java.util.*;
 /* 
+ * 05% Peaceful
  * 10% Towns 1% large, 3% medium, 6% small 
- * 70% Monster
+ * 65% Monster
  * 20% NPCs - 80% aggressive
  * 
  * byte[][] grid Values:
@@ -22,8 +23,11 @@ import java.util.*;
  * 
  */
 public class RandomEvent {
+    /** Stores values of events that occured on grid */
     public static byte[][] grid = new byte[50][50];
-    public static String[] idList = new String[6999];   
+    /** Stores values of possible IDs in game */
+    public static String[] idList = new String[7000];
+    /** Prevent reset of game */
     public static boolean arrayPopulated = false;
     public RandomEvent() {}
     /** Creates the event encountered on the position of int x and int y*/
@@ -33,27 +37,29 @@ public class RandomEvent {
         boolean isAggressive = false;
         String name = "";
         generationValue = generator.nextInt(1000);
-        if (arrayPopulated != true) {
+        if (arrayPopulated != true) { 
             grid[x][y] = 0; 
             arrayPopulator();
             accessIDs();
         }
         if (grid[x][y] == 1) { // Random Event
-            if (generationValue > 300) { //Do Random Event
+            if (generationValue > 50) { //Do Random Event
                 generationValue = generator.nextInt(1000);
-                if (generationValue > 900) {
+                if (generationValue > 950) {
+                    //Generate PeacefulAnimal
+                    generatePeacefulAnimal(generationValue, x, y);
+                } else if (generationValue > 850) {
                     //Generate Town
                     generateTown(generationValue, x, y);
-                } else if (generationValue > 700) {
+                } else if (generationValue > 650) {
                     //Generate NPC
                     generateNonPlayerCharacter(generationValue, x, y); 
                 } else {
                     //Generate Monster
                     generateMonster(generationValue, x, y);
-                    generatePeacefulAnimal(generationValue, x, y);
                 }
             } else { // No random Event
-                //
+                System.out.println("This is a silly place.");
             }
         }
         if (grid[x][y] == 10) { // 
@@ -69,7 +75,7 @@ public class RandomEvent {
         int attack, strength, defense, health, rarity, incomplete = 0;
         String name;
         rarity = rarityValue(generator.nextInt(200000));
-        //Checks to if there is a string value at rarity
+        /*Checks to if there is a string value at rarity */
         if (idList[rarity] != "") {
             name = idList[rarity];
         } else {
@@ -132,7 +138,7 @@ public class RandomEvent {
         }
     }
     /**Generates a NonPlayerCharacter */
-    public static void generateNonPlayerCharacter(int seed, int x, int y) {
+    public static Object generateNonPlayerCharacter(int seed, int x, int y) {
         Random generator = new Random(seed);
         int attack, strength, defense, health, nameChoice;
         boolean isAggressive;
@@ -142,27 +148,45 @@ public class RandomEvent {
         defense = 1 + generator.nextInt(100);
         health = 1 + generator.nextInt(100);
         nameChoice = generator.nextInt(2);
-        if (nameChoice == 1) {
-            name = idList[5000 + generator.nextInt(100)] + "_" + idList[5100 + generator.nextInt(400)] + "_" + idList[6000 + generator.nextInt(1000)];
+        if (generator.nextInt(100) > 80) {
+            isAggressive = true;
         } else {
-            name = idList[5500 + generator.nextInt(100)] + "_" + idList[5600 + generator.nextInt(100)] + "_" + idList[6000 + generator.nextInt(1000)];
+            isAggressive = false;
         }
+        if (nameChoice == 1) {
+            name = idList[5000 + generator.nextInt(100)] + "_" + 
+                   idList[5100 + generator.nextInt(400)] + "_" + 
+                   idList[6000 + generator.nextInt(1000)];
+        } else {
+            name = idList[5500 + generator.nextInt(100)] + "_" + 
+                   idList[5600 + generator.nextInt(100)] + "_" + 
+                   idList[6000 + generator.nextInt(1000)];
+        }
+        NonPlayerCharacter npc = new NonPlayerCharacter(name, isAggressive, attack, strength,
+                                                        defense, health, x, y);
+        return npc;
     }
     /** Generates a PeacefulAnimal */
-    public static void generatePeacefulAnimal(int seed, int x, int y) {
+    public static Object generatePeacefulAnimal(int seed, int x, int y) {
         Random generator = new Random(seed);       
         int health;
         String name = "";
         name = idList[1000 + generator.nextInt(1000)];
         health = 15 + generator.nextInt(50);
+        PeacefulAnimal peacefulAnimal = new PeacefulAnimal(name, health, x, y);
+        return peacefulAnimal;
     }
     /** Generates a Town */
-    public static void generateTown(int seed, int x, int y) {
+    public static Object generateTown(int seed, int x, int y) {
         Random generator = new Random(seed);
         int size;
         String name;
+        size = generator.nextInt(3) + 1;
         name = idList[4000 + generator.nextInt(1000)];
+        Town town = new Town(name, size, x, y);
+        return town;
     }
+    /** Populates the grid */
     public static void arrayPopulator() {
         for (int k = 0; k < grid.length; k++) {
             for (int j = 0; j < grid.length; j++) {
@@ -171,13 +195,14 @@ public class RandomEvent {
         }
         arrayPopulated = true;
     }
+    /** Accesses idList.gand and stores values in idList array */
     public static void accessIDs() {
         try {
             File file = new File("idList.gand");
             RandomAccessFile idList = new RandomAccessFile(file,"r");
             String storage = "";
             char numberSign;
-            int valueAtidList;
+            int index;
             for (int j = 0; j < 7028; j++) {
                 storage = idList.readLine();
                 numberSign = storage.charAt(0);
@@ -189,11 +214,11 @@ public class RandomEvent {
                         System.out.println(splitValues[h]);
                     }
                     */
-                    valueAtidList = Integer.parseInt(splitValues[0]);
+                    index = Integer.parseInt(splitValues[0]);
                     if (splitValues.length == 2) {
-                        idList[valueAtidList] = SplitValues[1];
+                        idListPopulator(index, splitValues[1]);
                     } else {
-                        idList[valueAtidList] = "";
+                        idListPopulator(index, "");
                     }
                 }
             } 
@@ -202,5 +227,10 @@ public class RandomEvent {
             System.out.println("IOException: ");
             e.printStackTrace();
         }
+    }
+    /** Auto-generated method of the conceptualizer method */
+    public static void idListPopulator(int index, String name) {
+        System.out.println(index + " " + name);
+        idList[index] = name;
     }
 }
