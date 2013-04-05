@@ -57,6 +57,7 @@ public class RandomEvent {
                 } else {
                     //Generate Monster
                     generateMonster(generationValue, x, y);
+                    System.out.println(Object.strength());
                 }
             } else { // No random Event
                 System.out.println("This is a silly place.");
@@ -91,16 +92,16 @@ public class RandomEvent {
         }
         //randomizes values monster stats
         if ((seed + 1) % 2 == 0) {
-            attack = 1 + rarity + generator.nextInt(((int)(rarity    / 100)));
-            strength = 1 + rarity + generator.nextInt(((int)(rarity / 100)));
-            defense = 1 + rarity + generator.nextInt(((int)(rarity / 100)));
-            health = 1 + rarity + generator.nextInt(((int)(rarity / 100)));
+            attack = 1 + rarity + generator.nextInt(((int)(rarity    / 100))+1);
+            strength = 1 + rarity + generator.nextInt(((int)(rarity / 100))+1);
+            defense = 1 + rarity + generator.nextInt(((int)(rarity / 100))+1);
+            health = 1 + rarity + generator.nextInt(((int)(rarity / 100))+1);
             //                                       It's a road /
         } else {
-            attack = 1 + rarity - generator.nextInt(((int)(rarity    / 100)));
-            strength = 1 + rarity - generator.nextInt(((int)(rarity / 100)));
-            defense = 1 + rarity - generator.nextInt(((int)(rarity / 100)));
-            health = 1 + rarity - generator.nextInt(((int)(rarity / 100)));
+            attack = 1 + rarity - generator.nextInt(((int)(rarity    / 100))+1);
+            strength = 1 + rarity - generator.nextInt(((int)(rarity / 100))+1);
+            defense = 1 + rarity - generator.nextInt(((int)(rarity / 100))+1);
+            health = 1 + rarity - generator.nextInt(((int)(rarity / 100))+1);
         }
         Monster monster = new Monster(name, attack, strength, defense, health, x, y);
         return monster;
@@ -230,7 +231,8 @@ public class RandomEvent {
     }
     /** Auto-generated method of the conceptualizer method */
     public static void idListPopulator(int index, String name) {
-        System.out.println(index + " " + name);
+        //Test
+        //System.out.println(index + " " + name);
         idList[index] = name;
     }
 }
