@@ -47,17 +47,16 @@ public class RandomEvent {
                 generationValue = generator.nextInt(1000);
                 if (generationValue > 950) {
                     //Generate PeacefulAnimal
-                    generatePeacefulAnimal(generationValue, x, y);
+                    PeacefulAnimal peacefulAnimal = generatePeacefulAnimal(generationValue, x, y);
                 } else if (generationValue > 850) {
                     //Generate Town
-                    generateTown(generationValue, x, y);
+                    Town town = generateTown(generationValue, x, y);
                 } else if (generationValue > 650) {
                     //Generate NPC
-                    generateNonPlayerCharacter(generationValue, x, y); 
+                    NonPlayerCharacter npc = generateNonPlayerCharacter(generationValue, x, y); 
                 } else {
                     //Generate Monster
-                    generateMonster(generationValue, x, y);
-                    System.out.println(Object.strength());
+                    Monster monster = generateMonster(generationValue, x, y);
                 }
             } else { // No random Event
                 System.out.println("This is a silly place.");
@@ -71,7 +70,7 @@ public class RandomEvent {
         //             //
     }
     /** Generates a Monster, uses rarity in generation */
-    public static Object generateMonster(int seed, int x, int y) {
+    public static Monster generateMonster(int seed, int x, int y) {
         Random generator = new Random(seed);
         int attack, strength, defense, health, rarity, incomplete = 0;
         String name;
@@ -139,7 +138,7 @@ public class RandomEvent {
         }
     }
     /**Generates a NonPlayerCharacter */
-    public static Object generateNonPlayerCharacter(int seed, int x, int y) {
+    public static NonPlayerCharacter generateNonPlayerCharacter(int seed, int x, int y) {
         Random generator = new Random(seed);
         int attack, strength, defense, health, nameChoice;
         boolean isAggressive;
@@ -168,7 +167,7 @@ public class RandomEvent {
         return npc;
     }
     /** Generates a PeacefulAnimal */
-    public static Object generatePeacefulAnimal(int seed, int x, int y) {
+    public static PeacefulAnimal generatePeacefulAnimal(int seed, int x, int y) {
         Random generator = new Random(seed);       
         int health;
         String name = "";
@@ -178,7 +177,7 @@ public class RandomEvent {
         return peacefulAnimal;
     }
     /** Generates a Town */
-    public static Object generateTown(int seed, int x, int y) {
+    public static Town generateTown(int seed, int x, int y) {
         Random generator = new Random(seed);
         int size;
         String name;
@@ -229,7 +228,7 @@ public class RandomEvent {
             e.printStackTrace();
         }
     }
-    /** Auto-generated method of the conceptualizer method */
+    /** Auto-generated method method of the conceptualizer */
     public static void idListPopulator(int index, String name) {
         //Test
         //System.out.println(index + " " + name);

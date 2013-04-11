@@ -41,6 +41,7 @@ public class Monster {
     public static int y() {
         return y;
     }
+    public static String Success() {return "awww yisssh" + attack + " " + strength + "  ";}
     public static void WriteToFile() {
         String information = x + " " + y + " " + name + " " + attack + " " + strength + " " + defense + " " + health + "\n";
         try {
