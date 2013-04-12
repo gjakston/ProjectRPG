@@ -31,7 +31,7 @@ public class RandomEvent {
     public static boolean arrayPopulated = false;
     public RandomEvent() {}
     /** Creates the event encountered on the position of int x and int y*/
-    public static void newRandomEvent(int x, int y) {
+    public static Object newRandomEvent(int x, int y) {
         Random generator = new Random(778578458);
         int attack, strength, defense, size, health, generationValue, rarity;
         boolean isAggressive = false;
@@ -48,15 +48,19 @@ public class RandomEvent {
                 if (generationValue > 950) {
                     //Generate PeacefulAnimal
                     PeacefulAnimal peacefulAnimal = generatePeacefulAnimal(generationValue, x, y);
+                    return peacefulAnimal;
                 } else if (generationValue > 850) {
                     //Generate Town
                     Town town = generateTown(generationValue, x, y);
+                    return town;
                 } else if (generationValue > 650) {
                     //Generate NPC
                     NonPlayerCharacter npc = generateNonPlayerCharacter(generationValue, x, y); 
+                    return npc;
                 } else {
                     //Generate Monster
                     Monster monster = generateMonster(generationValue, x, y);
+                    return monster;
                 }
             } else { // No random Event
                 System.out.println("This is a silly place.");
