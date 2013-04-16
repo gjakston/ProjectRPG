@@ -72,6 +72,7 @@ public class RandomEvent {
         }
          // Tire treads //
         //             //
+        return null;
     }
     /** Generates a Monster, uses rarity in generation */
     public static Monster generateMonster(int seed, int x, int y) {
