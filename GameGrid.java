@@ -53,6 +53,7 @@ public class GameGrid {
                     playing = false;
                     System.exit(0);
                     break;
+                    
                 default:
                     for (int k = 0; k <= 17; k++) {
                         System.out.println("CH3473R!!!!!!");
@@ -60,9 +61,8 @@ public class GameGrid {
                     break;
                 }
             //RandomEvent(int x, int y)
-            randomEventarizer.newRandomEvent(mainChar.LocationX(), mainChar.LocationY());
+            Object event = randomEventarizer.newRandomEvent(mainChar.LocationX(), mainChar.LocationY());
             
-          
         }  
     }
     /**

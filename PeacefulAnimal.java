@@ -26,6 +26,7 @@ public class PeacefulAnimal {
     public static int y() {
         return y;
     }
+    public static String type(){return "PeacefulAnimal";}    
     public static void WriteToFile() {
         String information = "" + x + " " + y + " " + name + " " + health + "\n";
         try {

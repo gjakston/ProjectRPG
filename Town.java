@@ -14,6 +14,7 @@ public class Town {
         this.x = x;
         this.y = y;
     }
+    public static String type(){return "Town";}
     public static void WriteToFile() {
         String information = "" + x + " " + y + " " + townName + " " + size + " " + relationToTown + "\n";
         try {

@@ -52,6 +52,7 @@ public class NonPlayerCharacter {
     public static int y() {
         return y;
     }
+    public static String type(){return "NPC";}
     public static void WriteToFile() {
         String information = x + " " + y + " " + name + " " + attack + " " + strength + " " + defense + " " + health + " " + isAggressive + "\n";
         try {

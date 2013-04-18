@@ -20,5 +20,5 @@ comment7.target=int\ x()
 comment8.params=
 comment8.target=int\ y()
 comment9.params=
-comment9.target=java.lang.String\ Success()
+comment9.target=java.lang.String\ type()
 numComments=11
