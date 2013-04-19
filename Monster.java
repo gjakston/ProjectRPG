@@ -43,8 +43,7 @@ public class Monster {
     }
     public static String type(){return "Monster";}
     public static void WriteToFile() {
-        String information = x + " " + y + " " + name + " " + attack + " " + strength + " " + defense + " " + health + "\n";
-        try {
+        String information = x           
             File file = new File("MonsterData.gand");
             RandomAccessFile MonsterData = new RandomAccessFile(file,"rw");
             MonsterData.seek(file.length());

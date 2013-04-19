@@ -61,7 +61,7 @@ public class GameGrid {
                     break;
                 }
             //RandomEvent(int x, int y)
-            Object event = randomEventarizer.newRandomEvent(mainChar.LocationX(), mainChar.LocationY());
+            randomEventarizer.newRandomEvent(mainChar.LocationX(), mainChar.LocationY());
             
         }  
     }
