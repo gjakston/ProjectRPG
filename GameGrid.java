@@ -1,3 +1,6 @@
+import java.io.File;
+import java.io.RandomAccessFile;
+import java.io.IOException;
 import java.util.*;
 public class GameGrid {
     public GameGrid() {}
@@ -18,6 +21,7 @@ public class GameGrid {
                         "For help, type \"HELP\"\n");    
         MainCharacter mainChar = new MainCharacter(charName, 25,25);
         RandomEvent randomEventarizer = new RandomEvent();
+        Combat combat = new Combat();
         while (playing) {
             String cmdLine = input.next();
             switch(cmdLine) {
@@ -61,9 +65,42 @@ public class GameGrid {
                     break;
                 }
             //RandomEvent(int x, int y)
-            randomEventarizer.newRandomEvent(mainChar.LocationX(), mainChar.LocationY());
+            if (randomEventarizer.newRandomEvent(mainChar.LocationX(), mainChar.LocationY())== true) {
+                
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
         }  
+    }
+    public static boolean isTown() {
+        try {
+            File file = new File("TemporaryData.gand");
+            RandomAccessFile tempData = new RandomaAccessFile(file, "r");
+            String readTempFile = tempData.readLine();
+            String[] splitInformation = readTempFile.split(" ");
+            if (splitInformation.length == 5) {
+                return true;
+            } else {
+                return false;
+            }
+            
+        } catch (Exception e) {
+            System.out.println("IOException: ");
+        }
+        
     }
     /**
      * Controls and manipulates the cognitive values of the game engine, determining indirectly the likelyhood of a new instantiation of a conceptualizer object that controls the probability of another call to the conceptualizer method in the same class.

@@ -28,4 +28,17 @@ public class Town {
             e.printStackTrace();
         }
     }
+    public static void TemporaryDataToFile() {
+        String information = "" + x + " " + y + " " + townName + " " + size + " " + relationToTown + "\n";
+        try {
+            File file = new File("TemporaryData.gand");
+            RandomAccessFile TempData = new RandomAccessFile(file,"rw");
+            TempData.seek(file.length());
+            TempData.writeBytes(information);
+            TempData.close();
+        } catch (IOException e) {
+            System.out.println("IOException: ");
+            e.printStackTrace();
+        }
+    }
 }

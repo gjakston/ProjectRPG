@@ -44,10 +44,21 @@ public class ResetDataFiles {
             e.printStackTrace();
         }
     }
+    public void ResetTemporaryData() {
+        try {
+            PrintWriter writer = new PrintWriter("TemporaryData.gang");
+            writer.print("");
+            writer.close();
+        } catch (Exception e) {
+            System.out.println("IOException: ");
+            e.printStackTrace();
+        }
+    }  
     public void ResetFileValuesAll() {
         ResetFileValuesNPC();
         ResetFileValuesTown();
         ResetFileValuesPeacefulAnimal();   
         ResetFileValuesMonster();
+        ResetTemporaryData();
     }
 }

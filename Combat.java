@@ -16,11 +16,11 @@ public class Combat {
         //
     
     }
-    public static void fightPeacefulAnimal(Maincharacter player, PeacefulAnimal peacefulAnimal) {
+    public static void fightPeacefulAnimal(MainCharacter player, PeacefulAnimal peacefulAnimal) {
         //
     
     }
-    public static boolean fleePeacefulAnimal(Maincharacter player, PeacefulAnimal peacefulAnimal) {
+    public static boolean fleePeacefulAnimal(MainCharacter player, PeacefulAnimal peacefulAnimal) {
         return true;
     }
 }

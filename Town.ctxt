@@ -7,4 +7,6 @@ comment2.params=
 comment2.target=java.lang.String\ type()
 comment3.params=
 comment3.target=void\ WriteToFile()
-numComments=4
+comment4.params=
+comment4.target=void\ TemporaryDataToFile()
+numComments=5

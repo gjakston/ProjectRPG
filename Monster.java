@@ -43,12 +43,26 @@ public class Monster {
     }
     public static String type(){return "Monster";}
     public static void WriteToFile() {
-        String information = x           
+        String information = x + " " + y + " " + name + " " + attack + " " + strength + " " + defense + " " + health + "\n"; 
+        try {
             File file = new File("MonsterData.gand");
             RandomAccessFile MonsterData = new RandomAccessFile(file,"rw");
             MonsterData.seek(file.length());
             MonsterData.writeBytes(information);
             MonsterData.close();
+        } catch (IOException e) {
+            System.out.println("IOException: ");
+            e.printStackTrace();
+        }
+    }
+    public static void TemporaryDataToFile() {
+        String information = x + " " + y + " " + name + " " + attack + " " + strength + " " + defense + " " + health+ "\n";
+        try {
+            File file = new File("TemporaryData.gand");
+            RandomAccessFile TempData = new RandomAccessFile(file,"rw");
+            TempData.seek(file.length());
+            TempData.writeBytes(information);
+            TempData.close();
         } catch (IOException e) {
             System.out.println("IOException: ");
             e.printStackTrace();

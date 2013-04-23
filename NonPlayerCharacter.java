@@ -66,6 +66,19 @@ public class NonPlayerCharacter {
             e.printStackTrace();
         }
     }
+    public static void TemporaryDataToFile() {
+        String information = x + " " + y + " " + name + " " + attack + " " + strength + " " + defense + " " + health + " " + isAggressive + "\n";
+        try {
+            File file = new File("TemporaryData.gand");
+            RandomAccessFile TempData = new RandomAccessFile(file,"rw");
+            TempData.seek(file.length());
+            TempData.writeBytes(information);
+            TempData.close();
+        } catch (IOException e) {
+            System.out.println("IOException: ");
+            e.printStackTrace();
+        }
+    }
     public static boolean isAggressive() {
         return isAggressive;
     }

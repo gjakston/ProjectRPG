@@ -2,7 +2,7 @@
 comment0.params=
 comment0.target=RandomEvent()
 comment1.params=x\ y
-comment1.target=java.lang.Object\ newRandomEvent(int,\ int)
+comment1.target=boolean\ newRandomEvent(int,\ int)
 comment1.text=Creates\ the\ event\ encountered\ on\ the\ position\ of\ int\ x\ and\ int\ y
 comment10.params=index\ name
 comment10.target=void\ idListPopulator(int,\ java.lang.String)
