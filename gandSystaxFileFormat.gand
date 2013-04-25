@@ -15,4 +15,4 @@
 
 #   Format for MonsterData.gand
 69 96 Werebunny 99 99 45 99
-#X coord., Y coord., NPC Name(Title_First_Last), atk, str, def, health
+#X coord., Y coord., monster_name, atk, str, def, health
