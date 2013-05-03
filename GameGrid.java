@@ -67,7 +67,7 @@ public class GameGrid {
             if (randomEventarizer.newRandomEvent(mainChar.LocationX(), mainChar.LocationY())== true) {
                 if (identifyEvent() == 1) {
                     //Monster Combat
-                    Monster monster = new Monster(
+                    //Monster monster = new Monster(
                 } else if (identifyEvent() == 2) {
                     //NPC Combat
                     
@@ -79,7 +79,7 @@ public class GameGrid {
                     
                 }
             }
-            
+            */
             
             
             
@@ -89,7 +89,7 @@ public class GameGrid {
     public static Monster recreateMonster() {
         try {
             File file = new File("TemporaryData.gand");
-            RandomAccessFile tempData = new RandomaAccessFile(file, "r");
+            RandomAccessFile tempData = new RandomAccessFile(file, "r");
             String readTempFile = tempData.readLine();
             String[] splitInformation = readTempFile.split(" ");
         } catch (Exception e) {
@@ -99,7 +99,7 @@ public class GameGrid {
     public static NonPlayerCharacter recreateNPC() {
         try {
             File file = new File("TemporaryData.gand");
-            RandomAccessFile tempData = new RandomaAccessFile(file, "r");
+            RandomAccessFile tempData = new RandomAccessFile(file, "r");
             String readTempFile = tempData.readLine();
             String[] splitInformation = readTempFile.split(" ");
         } catch (Exception e) {
@@ -109,7 +109,7 @@ public class GameGrid {
     public static PeacefulAnimal recreatePeacefulAnimal() {
         try {
             File file = new File("TemporaryData.gand");
-            RandomAccessFile tempData = new RandomaAccessFile(file, "r");
+            RandomAccessFile tempData = new RandomAccessFile(file, "r");
             String readTempFile = tempData.readLine();
             String[] splitInformation = readTempFile.split(" ");
         } catch (Exception e) {
@@ -119,7 +119,7 @@ public class GameGrid {
     public static Town recreateTown() {
         try {
             File file = new File("TemporaryData.gand");
-            RandomAccessFile tempData = new RandomaAccessFile(file, "r");
+            RandomAccessFile tempData = new RandomAccessFile(file, "r");
             String readTempFile = tempData.readLine();
             String[] splitInformation = readTempFile.split(" ");
         } catch (Exception e) {
@@ -130,7 +130,7 @@ public class GameGrid {
     public static byte identifyEvent() {
         try {
             File file = new File("TemporaryData.gand");
-            RandomAccessFile tempData = new RandomaAccessFile(file, "r");
+            RandomAccessFile tempData = new RandomAccessFile(file, "r");
             String readTempFile = tempData.readLine();
             String[] splitInformation = readTempFile.split(" ");
             if (splitInformation.length == 4) { // Peaceful Animal
@@ -148,6 +148,7 @@ public class GameGrid {
             System.out.println("IOException: ");
         }
     }
+    
     /**
      * Controls and manipulates the cognitive values of the game engine, determining indirectly the likelyhood of a new instantiation of a conceptualizer object that controls the probability of another call to the conceptualizer method in the same class.
 

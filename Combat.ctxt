@@ -2,5 +2,15 @@
 comment0.params=
 comment0.target=Combat()
 comment1.params=player\ monster
-comment1.target=void\ Fight(java.lang.Object,\ java.lang.Object)
-numComments=2
+comment1.target=void\ fightMonster(MainCharacter,\ Monster)
+comment2.params=player\ monster
+comment2.target=boolean\ fleeMonster(MainCharacter,\ Monster)
+comment3.params=player\ npc
+comment3.target=void\ fightNPC(MainCharacter,\ NonPlayerCharacter)
+comment4.params=player\ npc
+comment4.target=boolean\ fleeNPC(MainCharacter,\ NonPlayerCharacter)
+comment5.params=player\ peacefulAnimal
+comment5.target=void\ fightPeacefulAnimal(MainCharacter,\ PeacefulAnimal)
+comment6.params=player\ peacefulAnimal
+comment6.target=boolean\ fleePeacefulAnimal(MainCharacter,\ PeacefulAnimal)
+numComments=7
