@@ -11,6 +11,4 @@ comment4.params=player\ npc
 comment4.target=boolean\ fleeNPC(MainCharacter,\ NonPlayerCharacter)
 comment5.params=player\ peacefulAnimal
 comment5.target=void\ fightPeacefulAnimal(MainCharacter,\ PeacefulAnimal)
-comment6.params=player\ peacefulAnimal
-comment6.target=boolean\ fleePeacefulAnimal(MainCharacter,\ PeacefulAnimal)
-numComments=7
+numComments=6

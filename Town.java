@@ -14,6 +14,13 @@ public class Town {
         this.x = x;
         this.y = y;
     }
+    public Town(String name, int size, int x, int y, int relationToTown) {
+        townName = name;
+        this.size = size;
+        this.x = x;
+        this.y = y;
+        this.relationToTown = relationToTown;
+    }
     public static String type(){return "Town";}
     public static void WriteToFile() {
         String information = "" + x + " " + y + " " + townName + " " + size + " " + relationToTown + "\n";

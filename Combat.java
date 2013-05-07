@@ -20,7 +20,4 @@ public class Combat {
         //
     
     }
-    public static boolean fleePeacefulAnimal(MainCharacter player, PeacefulAnimal peacefulAnimal) {
-        return true;
-    }
 }

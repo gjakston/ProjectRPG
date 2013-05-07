@@ -20,7 +20,7 @@ public class Monster {
         this.y = y;
         this.name = name;
     }
-    public static String monsterName() {
+    public static String name() {
         return name;
     }
     public static int attack() {

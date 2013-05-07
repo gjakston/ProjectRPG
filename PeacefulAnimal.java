@@ -14,7 +14,7 @@ public class PeacefulAnimal {
         this.y = y;
         this.name = name;
     }
-    public static String PeacefulAnimalName() {
+    public static String name() {
         return name;
     }
     public static int health() {
