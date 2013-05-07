@@ -21,7 +21,7 @@ public class MainCharacter {
         return y;
     }    
     public static String levels() {
-        String stats = "" + attack + " " + strength + " " + defense + " " + health + " " + expToLevel();
+        String stats = "" + attack + " " + strength + " " + defense + " " + health + " " + healthRemaining " " + expToLevel();
         return stats;
     }
     public static void exp(int expEarned) {

@@ -92,7 +92,7 @@ public class GameGrid {
                         if (fight == true) {
                             while (fight == true) {
                                 combat.fightMonster(mainChar, monster);
-                                System.out.println("Continue?Y/N");
+                                System.out.println("Continue? Y/N");
                                 cmdLine = input.nextLine();
                                 switch(cmdLine) {
                                     case "Y":
@@ -112,13 +112,14 @@ public class GameGrid {
                                 eventOccuring = false;
                             } else {
                                 System.out.println("You failed to evade " + monster.name());
+                                validInput = false;
                             }
                         }
                     }
                 } else if (identifyEvent() == 1) {
                     //NPC Combat or Interaction
                     NonPlayerCharacter npc = recreateNPC();
-                    System.out.println("Fight or flee: " + npc.NPC_Name());
+                    System.out.println("Fight, flee, or talk?: " + npc.NPC_Name());
                     
                 } else if (identifyEvent() == 2) {
                     //Peaceful Animal Combat
@@ -144,7 +145,7 @@ public class GameGrid {
                         if (fight == true) {
                             while (fight == true) {
                                 combat.fightPeacefulAnimal(mainChar, peacefulAnimal);
-                                System.out.println("Continue?Y/N");
+                                System.out.println("Continue? Y/N");
                                 cmdLine = input.nextLine();
                                 switch(cmdLine) {
                                     case "Y":
@@ -167,11 +168,6 @@ public class GameGrid {
                     Town town = recreateTown();
                 }
             }
-            
-            
-            
-            
-            
         }  
     }
     /**Identifies the type of random event created */
@@ -213,7 +209,7 @@ public class GameGrid {
         } catch (Exception e) {
             System.out.println("Exception: " + e);
         }
-        Monster monster = new Monster(name, attack, strength, defense, health ,x, y);
+        Monster monster = new Monster(name, attack, strength, defense, health,x, y);
         return monster;
     }
     public static NonPlayerCharacter recreateNPC() {

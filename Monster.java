@@ -7,15 +7,18 @@ public class Monster {
     private static int strength;
     private static int defense;
     private static int health;
+    private static int healthRemaining;
+    private static int rarity;
     private static int x;
     private static int y;
     private static String name;
     public Monster() {}
-    public Monster(String name, int attack, int strength, int defense, int health,int x, int y) {
+    public Monster(String name, int attack, int strength, int defense, int health, int x, int y) {
         this.attack = attack; 
         this.strength = strength;
         this.defense = defense;
         this.health = health;
+        healthRemaining = health;
         this.x = x;
         this.y = y;
         this.name = name;
@@ -23,17 +26,17 @@ public class Monster {
     public static String name() {
         return name;
     }
-    public static int attack() {
-        return attack;
-    }
-    public static int strength() {
-        return strength;
+    public static int power() {
+        return (attack + strength);
     }
     public static int defense() {
         return defense;
     }
     public static int health() {
         return health;
+    }
+    public static int healthRemaining() {
+        return healthRemaining;
     }
     public static int x() {
         return x;
