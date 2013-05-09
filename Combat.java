@@ -5,25 +5,35 @@ public class Combat {
         String playerValues[] = player.levels().split(" ");
         int monsterPower = monster.power();
         int monsterHealth = monster.healthRemaining();
-        int playerPower = Integer.parseInt(playerValues[0]) * Integer.parseInt(playerValues[1]);
+        int playerPower = player.power();
         int playerHealth = Integer.parseInt(playerValues[4]);
         boolean powerful = false;
-        if (playerPower > monsterPower) {
+        if (playerPower > monsterPower && player.defense() > monster.defense()) {
             powerful = true;
         }
-        if (playerPower < monsterPower) {
-            powerful = false;
-        }
-        if (Integer.parseInt(playerValues[2]) > monster.defense()) {
-            powerful = true;
-        }
-        if (Integer.parseInt(playerValues[2]) < monster.defense()) {
-            powerful = false;
+        if (powerful == true) {
+            playerPower *= 2;
+            monsterHealth -= (playerPower - monster.defense());
+            if (player.defense() > monsterPower) {
+            } else {
+                playerHealth = (player.defense() - monsterPower);
+            }
+        } else {
+            playerPower = (int)(playerPower * .75);
+            monsterPower = (int)(1.5 * monsterPower);
+            if (monster.defense() > playerPower) {
+            } else {
+                monsterHealth -= (monster.defense() - 
+            }
+            monsterHealth -= monster.defense() - player
+            if (player.defense() > monsterPower) {
+            } else {
+                playerHealth -= (player.defense() - monsterPower);
+            }
         }
         
-            
         
-        // a quick brown fox jumped over the lazy dog
+        
     }
     public static boolean fleeMonster(MainCharacter player, Monster monster) {
         //

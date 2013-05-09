@@ -15,6 +15,46 @@
 #         900 - 999: UNUSED
 #     1000 - 1999: Non-hostile creatures
 # 2000 - 3999: Items
+#     2000 - 2999: Combat
+#         2000 - 2499: Weapons
+#             2000 - 2099: Weak
+#             2100 - 2199: Standard
+#             2200 - 2299: Strong
+#             2300 - 2399: Epic
+#             2400 - 2499: One-time
+#         2500 - 2599: Shields
+#             2500 - 2519: Weak
+#             2520 - 2539: Standard
+#             2540 - 2559: Strong
+#             2560 - 2579: Epic
+#             2580 - 2599: One-time
+#         2600 - 2699: Cuirasses
+#             2600 - 2619: Weak
+#             2620 - 2639: Standard
+#             2640 - 2659: Strong
+#             2660 - 2679: Epic
+#             2680 - 2699: One-time
+#         2700 - 2799: Greaves
+#             2700 - 2719: Weak
+#             2720 - 2739: Standard
+#             2740 - 2759: Strong
+#             2760 - 2779: Epic
+#             2780 - 2799: One-time
+#         2800 - 2899: Gauntlets
+#             2800 - 2819: Weak
+#             2820 - 2839: Standard
+#             2840 - 2859: Strong
+#             2860 - 2879: Epic
+#             2880 - 2899: One-time
+#         2900 - 2999: Boots
+#             2900 - 2919: Weak
+#             2920 - 2939: Standard
+#             2940 - 2959: Strong
+#             2960 - 2979: Epic
+#             2980 - 2999: One-time
+#     3000 - 3999: Non-combat
+#         3000 - 3499: Consumables
+#         3500 - 3999: Static
 # 4000 - 4999: Town names
 # 5000 - 6999: NPC names
 #     5000 - 5999: Male names
@@ -2024,7 +2064,7 @@
 1997
 1998
 1999
-2000
+2000 
 2001
 2002
 2003
@@ -2424,7 +2464,7 @@
 2397
 2398
 2399
-2400
+2400 Sir_Sherwood's_
 2401
 2402
 2403
@@ -6996,12 +7036,12 @@
 6967
 6968
 6969
-6970 SHOW_ME_THIS
-6971 THIS_HAS_TO_BE_SHOWN
-6972 iohpfghjqoigfwehwepjop4wet
-6973 FEED_THE_FIRE
-6974 WHAT_IS_THIS
-6975 I_DONT_KNOW_WHAT_THIS_IS
+6970
+6971
+6972
+6973
+6974
+6975
 6976
 6977
 6978
@@ -7014,15 +7054,15 @@
 6985
 6986
 6987
-6988 CAPS_LOCK
+6988
 6989
 6990
 6991
 6992
-6993 THIS_THIS
-6994 THIS_WHAT
-6995 THIS
-6996 STARTED_WHAT
-6997 YOU_STARTED_IT
-6998 WHY_ARE_WE_YELLING
-6999 END_OF_ARRAY_TEST
+6993
+6994
+6995
+6996
+6997
+6998
+6999
