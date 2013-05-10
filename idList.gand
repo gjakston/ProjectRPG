@@ -2064,22 +2064,22 @@
 1997
 1998
 1999
-2000 
-2001
-2002
-2003
-2004
-2005
-2006
-2007
-2008
-2009
-2010
-2011
-2012
-2013
-2014
-2015
+2000 bone_dagger
+2001 bone_shortsword
+2002 bone_claymore
+2003 bone_falchion
+2004 bone_flail
+2005 bone_mace
+2006 wooden_club
+2007 bronze_dagger
+2008 bronze_shortsword
+2009 bronze_claymore
+2010 bronze_falchion
+2011 bronze_flail
+2012 bronze_mace
+2013 bronze_axe
+2014 bronze_cutlass
+2015 bronze_greataxe
 2016
 2017
 2018
@@ -2164,24 +2164,24 @@
 2097
 2098
 2099
-2100
-2101
-2102
-2103
-2104
-2105
-2106
-2107
-2108
-2109
-2110
-2111
-2112
-2113
-2114
-2115
-2116
-2117
+2100 iron_dagger
+2101 iron_shortsword
+2102 iron_claymore
+2103 iron_falchion
+2104 iron_flail
+2105 iron_mace
+2106 iron_axe
+2107 iron_cutlass
+2108 iron_greataxe
+2109 steel_dagger
+2110 steel_shortsword
+2111 steel_claymore
+2112 steel_falchion
+2113 steel_flail
+2114 steel_mace
+2115 steel_axe
+2116 steel_cutlass
+2117 steel_greataxe
 2118
 2119
 2120
@@ -2264,7 +2264,7 @@
 2197
 2198
 2199
-2200
+2200 Reinforced_steel_
 2201
 2202
 2203

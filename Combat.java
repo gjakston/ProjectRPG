@@ -1,7 +1,6 @@
 public class Combat {
     public Combat() {}
     public static int[] fightMonster(MainCharacter player, Monster monster) {
-        //
         String playerValues[] = player.levels().split(" ");
         int monsterPower = monster.power();
         int monsterHealth = monster.healthRemaining();
@@ -23,27 +22,24 @@ public class Combat {
             monsterPower = (int)(1.5 * monsterPower);
             if (monster.defense() > playerPower) {
             } else {
-                monsterHealth -= (monster.defense() - 
+                monsterHealth -= monster.defense() - playerPower;
             }
-            monsterHealth -= monster.defense() - player
             if (player.defense() > monsterPower) {
             } else {
-                playerHealth -= (player.defense() - monsterPower);
+                playerHealth -= (player.defense() - monsterPower;
             }
         }
-        
-        
-        
+        int[] change = {playerHealth, monsterHealth};
+        return change;
     }
-    public static boolean fleeMonster(MainCharacter player, Monster monster) {
+    public static String[] fleeMonster(MainCharacter player, Monster monster) {
         //
-        return true;
     }
     public static void fightNPC(MainCharacter player, NonPlayerCharacter npc) {
         //
         
     }
-    public static boolean fleeNPC(MainCharacter player, NonPlayerCharacter npc) {
+    public static String[] fleeNPC(MainCharacter player, NonPlayerCharacter npc) {
         //
         return true;
     }

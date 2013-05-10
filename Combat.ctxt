@@ -2,7 +2,7 @@
 comment0.params=
 comment0.target=Combat()
 comment1.params=player\ monster
-comment1.target=void\ fightMonster(MainCharacter,\ Monster)
+comment1.target=int[]\ fightMonster(MainCharacter,\ Monster)
 comment2.params=player\ monster
 comment2.target=boolean\ fleeMonster(MainCharacter,\ Monster)
 comment3.params=player\ npc
