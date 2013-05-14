@@ -2264,24 +2264,24 @@
 2197
 2198
 2199
-2200 Reinforced_steel_
-2201
-2202
-2203
-2204
-2205
-2206
-2207
-2208
-2209
-2210
-2211
-2212
-2213
-2214
-2215
-2216
-2217
+2200 reinforced_steel_dagger
+2201 reinforced_steel_shortsword
+2202 reinforced_steel_claymore
+2203 reinforced_steel_falchion
+2204 reinforced_steel_flail
+2205 reinforced_steel_mace
+2206 reinforced_steel_axe
+2207 reinforced_steel_cutlass
+2208 reinforced_steel_greataxe
+2209 elinvar_dagger
+2210 elinvar_shortsword
+2211 elinvar_claymore
+2212 elinvar_falchion
+2213 elinvar_flail
+2214 elinvar_mace
+2215 elinvar_axe
+2216 elinvar_cutlass
+2217 elinvar_greataxe
 2218
 2219
 2220

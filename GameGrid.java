@@ -91,7 +91,17 @@ public class GameGrid {
                         }
                         if (fight == true) {
                             while (fight == true) {
-                                combat.fightMonster(mainChar, monster);
+                                int[] results = combat.fightMonster(mainChar, monster);
+                                mainChar.health(results[0]);
+                                monster.healthChange(results[1]);
+                                if (mainChar.healthRemaining <= 0) {
+                                    System.out.println("You have died in battle to " + monster.name());
+                                    System.exit(0);
+                                }
+                                if (monster.healthRemaining <= 0) {
+                                    System.out.println("You have slain " + monster.name());
+                                    mainChar.
+                                }
                                 System.out.println("Continue? Y/N");
                                 cmdLine = input.nextLine();
                                 switch(cmdLine) {
@@ -107,12 +117,25 @@ public class GameGrid {
                             }
                         }
                         if (fight == false) {
-                            if (combat.fleeMonster(mainChar, monster) == true) {
+                            String results[] = combat.fleeMonster();
+                            int damageTaken = Integer.parseInt(results[1]);
+                            if (results[0] == "true") {
+                                mainChar.health(damageTaken);
+                                if (mainChar.healthRemaining <= 0) {
+                                    System.out.println("You have died in battle to " + monster.name());
+                                    System.exit(0);
+                                }
                                 System.out.println("You successfully evaded " + monster.name());
-                                eventOccuring = false;
+                                System.out.println("You took " + damageTaken + " damage");
+                                mainChar.health(damageTaken);
                             } else {
+                                mainChar.health(damageTaken);
+                                if (mainChar.healthRemaining <= 0) {
+                                    System.out.println("You have died in battle to " + monster.name());
+                                    System.exit(0);
+                                }
                                 System.out.println("You failed to evade " + monster.name());
-                                validInput = false;
+                                System.out.println("You took " + damageTaken + " damage");
                             }
                         }
                     }

@@ -35,6 +35,9 @@ public class Monster {
     public static int health() {
         return health;
     }
+    public static void healthChange(int change) {
+        healthRemaining = change;
+    }
     public static int healthRemaining() {
         return healthRemaining;
     }

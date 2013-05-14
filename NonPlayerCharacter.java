@@ -7,6 +7,7 @@ public class NonPlayerCharacter {
     private static int strength;
     private static int defense;
     private static int health;
+    private static int healthRemaining;
     private static int x;
     private static int y;
     private static boolean isAggressive;
@@ -21,6 +22,7 @@ public class NonPlayerCharacter {
         this.y = y;
         this.name = name;
         this.isAggressive = isAggressive;
+        healthRemaining = health;
     }
     public static String NPC_Name() {
         String npcName[] = name.split("_");
@@ -34,11 +36,11 @@ public class NonPlayerCharacter {
         }
         return PrintedName;
     }
-    public static int attack() {
-        return attack;
+    public static int healthRemaining() {
+        return healthRemaining;
     }
-    public static int strength() {
-        return strength;
+    public static int power() {
+        return (attack + strength);
     }
     public static int defense() {
         return defense;

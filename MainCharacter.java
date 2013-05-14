@@ -84,7 +84,7 @@ public class MainCharacter {
         return stats;
     }
     public static void health(int change) {
-       healthRemaining += change;
+       healthRemaining = change;
     }
     public static void exp(int expEarned) {
         experience += expEarned;
