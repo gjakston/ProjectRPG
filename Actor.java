@@ -3,7 +3,7 @@ public interface Actor {
     public String name();
     public int health() ;
     public int healthRemaining(); 
-    public int healthChange();
+    public void updateHealth(int change);
     public int power();
     public int defense(); 
     public void WriteToFile();

@@ -1,14 +1,8 @@
 #BlueJ class context
-comment0.params=
-comment0.target=Town()
-comment1.params=name\ size\ x\ y
-comment1.target=Town(java.lang.String,\ int,\ int,\ int)
-comment2.params=name\ size\ x\ y\ relationToTown
-comment2.target=Town(java.lang.String,\ int,\ int,\ int,\ int)
-comment3.params=
-comment3.target=java.lang.String\ type()
-comment4.params=
-comment4.target=void\ WriteToFile()
-comment5.params=
-comment5.target=void\ TemporaryDataToFile()
-numComments=6
+comment0.params=name\ size\ x\ y
+comment0.target=Town(java.lang.String,\ int,\ int,\ int)
+comment1.params=name\ size\ x\ y\ relationToTown
+comment1.target=Town(java.lang.String,\ int,\ int,\ int,\ int)
+comment2.params=
+comment2.target=void\ WriteToFile()
+numComments=3

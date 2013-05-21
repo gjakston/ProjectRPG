@@ -1,37 +1,25 @@
-public class Monster implements Actor {
+public class Animal implements Actor {
     private String name;
-    private int attack;
-    private int strength;
-    private int defense;
     private int health;
     private int healthRemaining;
-    private int rarity;
     public int x;
     public int y;
     
-    public Monster(int x, int y, int attack, int strength, int defense, int health, int rarity, String name) {
+    public Animal(int x, int y, int health, String name) {
         this.x = x;
         this.y = y;
-        this.attack = attack;
-        this.strength = strength;
-        this.defense = defense;
         this.health = health;
-        this.rarity = rarity;
         this.name = name;
     }
-    public Monster(int x, int y, int attack, int strength, int defense, int health, int rarity, int healthRemaining, String name) {
+    public Animal(int x, int y, int health, int healthRemaining, String name) {
         this.x = x;
         this.y = y;
-        this.attack = attack;
-        this.strength = strength;
-        this.defense = defense;
         this.health = health;
-        this.rarity = rarity;
         this.healthRemaining = healthRemaining;
         this.name = name;
     }
     public String type() {
-        return "monster";
+        return "animal";
     }
     public String name() {
         return name;
@@ -46,10 +34,10 @@ public class Monster implements Actor {
         this.health = health;
     }
     public int power() {
-        return (attack + strength);
+        return 0;
     }
     public int defense() {
-        return defense;
+        return 0;
     }
     public void WriteToFile() {
         

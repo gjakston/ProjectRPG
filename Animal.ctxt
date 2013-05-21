@@ -1,8 +1,8 @@
 #BlueJ class context
-comment0.params=x\ y\ attack\ strength\ defense\ health\ rarity\ name
-comment0.target=Monster(int,\ int,\ int,\ int,\ int,\ int,\ int,\ java.lang.String)
-comment1.params=x\ y\ attack\ strength\ defense\ health\ rarity\ healthRemaining\ name
-comment1.target=Monster(int,\ int,\ int,\ int,\ int,\ int,\ int,\ int,\ java.lang.String)
+comment0.params=x\ y\ health\ name
+comment0.target=Animal(int,\ int,\ int,\ java.lang.String)
+comment1.params=x\ y\ health\ healthRemaining\ name
+comment1.target=Animal(int,\ int,\ int,\ int,\ java.lang.String)
 comment10.params=
 comment10.target=void\ TempDataToFile()
 comment2.params=
