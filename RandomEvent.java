@@ -45,7 +45,6 @@ public class RandomEvent {
             strength = 1 + ((int)(rarity/10)) + generator.nextInt(((int)(rarity / 100))+1);
             defense = 1 + ((int)(rarity/10)) + generator.nextInt(((int)(rarity / 100))+1);
             health = 1 + ((int)(rarity/10)) + generator.nextInt(((int)(rarity / 100))+1);
-            //                                       It's a road /
         } else {
             attack = 1 + ((int)(rarity/10)) - generator.nextInt(((int)(rarity    / 100))+1);
             strength = 1 + ((int)(rarity/10)) - generator.nextInt(((int)(rarity / 100))+1);

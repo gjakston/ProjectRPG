@@ -40,7 +40,7 @@ public class GameGrid {
                     break;
                     
                 case "WEST":
-                    mainChar.moveWeast();
+                    mainChar.moveWest();
                     break;
                     
                 case "EAST":
@@ -64,7 +64,7 @@ public class GameGrid {
                         System.out.println("CH3473R!!!!!!");
                     }
                     break;
-                }
+            }
             if (randomEventarizer.newRandomEvent(mainChar.locationX(), mainChar.locationY())== true) {
                 boolean eventOccuring = true, validInput = false, fight = false;
                 data.ResetTemporaryData();

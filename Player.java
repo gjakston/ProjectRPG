@@ -23,6 +23,42 @@ public class Player {
         this.y = y;
         this.name = name;
     }
+    public boolean moveNorth() {
+        if (y - 1 >= 0) {
+            y += 1;
+            return true;
+        } else {
+            System.out.print(name + ", you cannot go further north.");
+            return false;
+        }
+    }
+    public boolean moveSouth() {
+        if (y + 1 <= 50) {
+            y -= 1;
+            return true;
+        } else {
+            System.out.print(name + ", you cannot go further south.");
+            return false;
+        }
+    }
+    public boolean moveWest() {
+        if (x - 1 >= 0) {
+            x -= 1;
+            return true;
+        } else {
+            System.out.print(name + ", you cannot go further west.");
+            return false;
+        }
+    }
+    public boolean moveEast() {
+        if (x + 1 <= 50) {
+            x += 1;
+            return true;
+        } else {
+            System.out.print(name + ", you cannot go further east.");
+            return false;
+        }  
+    }
     public int health() {
         return health;
     }
