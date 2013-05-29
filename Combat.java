@@ -1,112 +1,48 @@
 import java.util.*;
 public class Combat {
-    public Combat() {}
-    public static int[] fightMonster(Player player, Monster monster) {
-        String[] playerValues = (player.levels()).split(" ");
-        int monsterPower = monster.power();
-        int monsterHealth = monster.healthRemaining();
-        int playerPower = player.power();
-        int playerHealth = Integer.parseInt(playerValues[4]);
+    private int seed;
+    public Combat(int seed) {
+        this.seed = seed;
+    }
+    public int[] fightMonster(Player player, Monster monster) {
         boolean powerful = false;
-        if (playerPower > monsterPower && player.defense() > monster.defense()) {
-            powerful = true;
+        if (monster.power() < player.power() && monster.defense() < player.power()) {
+           powerful = true; 
         }
-        if (powerful == true) {
-            playerPower *= 2;
-            monsterHealth -= (playerPower - monster.defense());
-            if (player.defense() > monsterPower) {
-            } else {
-                playerHealth = (player.defense() - monsterPower);
-            }
+        if (player
+        //return damageToMonster, damageToPlayer
+    }
+    public int[] fleeMonster(Player player, Monster monster) {
+        Random generator = new Random(seed);
+        boolean successful = false;
+        int[] changes;
+        int probability = generator.nextInt(100);
+        if (player.defense() > monster.power()) {
+            successful = true;
+            changes = new int[]{1,0};
+            return changes;
         } else {
-            playerPower = (int)(playerPower * .75);
-            monsterPower = (int)(1.5 * monsterPower);
-            if (monster.defense() > playerPower) {
-            } else {
-                monsterHealth -= monster.defense() - playerPower;
-            }
-            if (player.defense() > monsterPower) {
-            } else {
-                playerHealth -= (player.defense() - monsterPower);
+            if (probability < 65) {
+                successful = true;
             }
         }
-        int[] change = {playerHealth, monsterHealth};
-        return change;
-    }
-    public static String[] fleeMonster(Player player, Monster monster) {
-        Random generator = new Random(player.defense());
-        int chance = generator.nextInt(1000);
-        String[] change = new String[2];
-        int injury = 0;
-        boolean powerful = false;
-        if (player.power() > monster.power() && player.defense() > monster.defense()) {
-            powerful = true;
-            change[0] += "true";
-        }
-        if (powerful == false) {
-            if (chance > monster.power()) {
-                change[0] += "false";
-                injury = 4;
-            } else {
-                change[0] += "true";
-                injury = 8;
-            }
-        }
-        change[1] += injury;
-        return change;
-    }
-    public static int[] fightNPC(Player player, NonPlayerCharacter npc) {
-        String[] playerValues = (player.levels()).split(" ");
-        int npcPower = npc.power();
-        int npcHealth = npc.healthRemaining();
-        int playerPower = player.power();
-        int playerHealth = Integer.parseInt(playerValues[4]);
-        boolean powerful = false;
-        if (playerPower > npcPower && player.defense() > npc.defense()) {
-            powerful = true;
-        }
-        if (powerful == true) {
-            playerPower *= 2;
-            npcHealth -= (playerPower - npc.defense());
-            if (player.defense() > npcPower) {
-            } else {
-                playerHealth = (player.defense() - npcPower);
-            }
+        if (successful) {
+            changes = new int[]{1, -3};
+            return changes;
         } else {
-            playerPower = (int)(playerPower * .75);
-            npcPower = (int)(1.5 * npcPower);
-            if (npc.defense() > playerPower) {
-            } else {
-                npcHealth -= npc.defense() - playerPower;
-            }
-            if (player.defense() > npcPower) {
-            } else {
-                playerHealth -= (player.defense() - npcPower);
-            }
+            changes = new int[]{0, -6};
+            return changes;
         }
-        int[] change = {playerHealth, npcHealth};
-        return change;
+        //return {succeeded, damage taken)
+        //      1 true, 0 false
     }
-    public static String[] fleeNPC(Player player, NonPlayerCharacter npc) {
-        Random generator = new Random(player.defense());
-        int chance = generator.nextInt(1000);
-        String[] change = new String[2];
-        int injury = 0;
-        boolean powerful = false;
-        if (player.power() > npc.power() && npc.defense() > npc.defense()) {
-            powerful = true;
-            change[0] += "true";
-        }
-        if (powerful == false) {
-            if (chance > npc.power()) {
-                change[0] += "false";
-                injury = 4;
-            } else {
-                change[0] += "true";
-                injury = 8;
-            }
-        }
-        change[1] += injury;
-        return change;
+    public int[] fightNpc(Player player, NonPlayerCharacter npc) {
+        
+    }
+    public int[] fleeNpc(Player player, NonPlayerCharacter npc) {
+    
+    }
+    public int[] fightAnimal(Player player, Animal animal) {
+        
     }
 }

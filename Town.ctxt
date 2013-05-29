@@ -5,4 +5,6 @@ comment1.params=x\ y\ size\ relationToTown\ name
 comment1.target=Town(int,\ int,\ int,\ int,\ java.lang.String)
 comment2.params=
 comment2.target=void\ WriteToFile()
-numComments=3
+comment3.params=
+comment3.target=java.lang.String\ name()
+numComments=4

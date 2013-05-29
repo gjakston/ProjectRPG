@@ -1,5 +1,5 @@
 public class Monster implements Actor {
-    private String name;
+    public String name;
     private int attack;
     private int strength;
     private int defense;

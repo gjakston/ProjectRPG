@@ -20,4 +20,5 @@ public class Town {
     public void WriteToFile() {
         
     }
+    public String name() {return name;}
 }

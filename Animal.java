@@ -1,5 +1,5 @@
 public class Animal implements Actor {
-    private String name;
+    public String name;
     private int health;
     private int healthRemaining;
     public int x;
