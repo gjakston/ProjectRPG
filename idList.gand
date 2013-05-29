@@ -54,7 +54,13 @@
 #             2980 - 2999: One-time
 #     3000 - 3999: Non-combat
 #         3000 - 3499: Consumables
-#         3500 - 3999: Static
+#			3000 - 3099: Food
+#			3100 - 3199: Potions
+#			3200 - 3499: UNUSED	
+#         3500 - 3999: Specific
+#			3500 - 3699: Food
+#			3700 - 3799: Potions
+#			3800 - 3999: UNUSED
 # 4000 - 4999: Town names
 # 5000 - 6999: NPC names
 #     5000 - 5999: Male names

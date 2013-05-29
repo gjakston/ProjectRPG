@@ -4,13 +4,13 @@ public class Town {
     private int x;
     private int y;
     private int relationToTown = 0; // 0 = Neutral
-    public Town(String name, int size, int x, int y) {
+    public Town(int x, int y, int size, String name) {
         this.name = name;
         this.size = size;
         this.x = x;
         this.y = y;
     }
-    public Town(String name, int size, int x, int y, int relationToTown) {
+    public Town( int x, int y, int size, int relationToTown, String name) {
         this.name = name;
         this.size = size;
         this.x = x;

@@ -1,7 +1,7 @@
 import java.util.*;
 public class Combat {
     public Combat() {}
-    public static int[] fightMonster(MainCharacter player, Monster monster) {
+    public static int[] fightMonster(Player player, Monster monster) {
         String[] playerValues = (player.levels()).split(" ");
         int monsterPower = monster.power();
         int monsterHealth = monster.healthRemaining();
@@ -33,7 +33,7 @@ public class Combat {
         int[] change = {playerHealth, monsterHealth};
         return change;
     }
-    public static String[] fleeMonster(MainCharacter player, Monster monster) {
+    public static String[] fleeMonster(Player player, Monster monster) {
         Random generator = new Random(player.defense());
         int chance = generator.nextInt(1000);
         String[] change = new String[2];
@@ -55,7 +55,7 @@ public class Combat {
         change[1] += injury;
         return change;
     }
-    public static int[] fightNPC(MainCharacter player, NonPlayerCharacter npc) {
+    public static int[] fightNPC(Player player, NonPlayerCharacter npc) {
         String[] playerValues = (player.levels()).split(" ");
         int npcPower = npc.power();
         int npcHealth = npc.healthRemaining();
@@ -87,7 +87,7 @@ public class Combat {
         int[] change = {playerHealth, npcHealth};
         return change;
     }
-    public static String[] fleeNPC(MainCharacter player, NonPlayerCharacter npc) {
+    public static String[] fleeNPC(Player player, NonPlayerCharacter npc) {
         Random generator = new Random(player.defense());
         int chance = generator.nextInt(1000);
         String[] change = new String[2];
